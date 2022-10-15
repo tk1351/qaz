@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 export const Header: FC = () => (
-  <header>
+  <header role="navigation">
     <p>QAZ</p>
   </header>
 )
