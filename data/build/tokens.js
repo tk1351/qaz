@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 15 Oct 2022 23:39:17 GMT
+ * Generated on Sun, 16 Oct 2022 03:03:41 GMT
  */
 
 export default {
@@ -315,6 +315,25 @@ export default {
           item: '4'
         },
         path: ['global', 'White', '4']
+      },
+      5: {
+        value: '#C9C9C9',
+        type: 'color',
+        description: 'Text Color',
+        filePath: './data/tokens.json',
+        isSource: true,
+        original: {
+          value: '#C9C9C9',
+          type: 'color',
+          description: 'Text Color'
+        },
+        name: 'GlobalWhite5',
+        attributes: {
+          category: 'global',
+          type: 'White',
+          item: '5'
+        },
+        path: ['global', 'White', '5']
       }
     },
     sm: {

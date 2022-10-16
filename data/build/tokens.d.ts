@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 15 Oct 2022 23:39:17 GMT
+ * Generated on Sun, 16 Oct 2022 03:03:41 GMT
  */
 
 export default tokens;
@@ -45,7 +45,8 @@ declare const tokens: {
       "1": DesignToken,
       "2": DesignToken,
       "3": DesignToken,
-      "4": DesignToken
+      "4": DesignToken,
+      "5": DesignToken
     },
     "sm": DesignToken,
     "lg": DesignToken,
