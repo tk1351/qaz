@@ -12,6 +12,20 @@ const StyleDictionary = StyleDictionaryModule.extend({
           format: 'css/variables'
         }
       ]
+    },
+    ts: {
+      transformGroup: 'js',
+      buildPath: './data/build/',
+      files: [
+        {
+          destination: 'tokens.js',
+          format: 'javascript/module'
+        },
+        {
+          destination: 'tokens.d.ts',
+          format: 'typescript/module-declarations'
+        }
+      ]
     }
   }
 })
