@@ -50,7 +50,7 @@ const StyledLink = styled.a`
 
 const StyledForm = styled.form`
   height: 100%;
-  border-left: 1px solid red;
+  border-left: 0.5px solid ${tokens.global.White['5'].value};
 `
 
 const StyledInputWrapper = styled.div`
@@ -64,7 +64,7 @@ const StyledInput = styled.input`
   width: 100%;
   padding: 0 10px 0 50px;
   &:focus {
-    background-color: gray;
+    background-color: ${tokens.global['Dark Green']['2'].value};
   }
 `
 
@@ -87,6 +87,6 @@ const StyledList = styled.ul`
 
 const StyledNavLink = styled.a`
   &:hover {
-    color: red;
+    color: ${tokens.global.White['5'].value};
   }
 `
