@@ -1,4 +1,17 @@
+const svgr = require('vite-plugin-svgr')
+
 module.exports = {
+  async viteFinal(config, {configType}) {
+    config.plugins = [
+        ...config.plugins,
+        svgr({
+          svgrOptions: {
+            icon: true
+          }
+        })
+    ]
+    return config
+  },
   "stories": [
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
