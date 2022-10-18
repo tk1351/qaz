@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, MouseEvent } from 'react'
 import styled from 'styled-components'
 import tokens from '../../../../data/build/tokens'
 
@@ -28,7 +28,7 @@ export const MovieCard: FC<Props> = ({
   year,
   onClick
 }) => {
-  const handleClick = (event: any) => {
+  const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     onClick()
   }
