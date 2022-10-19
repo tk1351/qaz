@@ -57,3 +57,13 @@ StarButton.args = {
   svgHeight: 28,
   onClick: action('onClick')
 }
+
+export const Disabled = FavoriteTemplate.bind({})
+Disabled.args = {
+  buttonWidth: 32,
+  buttonHeight: 32,
+  svgWidth: 28,
+  svgHeight: 28,
+  disabled: true,
+  onClick: action('onClick')
+}

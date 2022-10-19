@@ -13,6 +13,7 @@ type Props = {
   buttonHeight: number
   svgWidth: number
   svgHeight: number
+  disabled: boolean
   onClick: () => void
   children: ReactNode
 } & ComponentPropsWithoutRef<'button'>
@@ -22,6 +23,7 @@ export const IconButton: FC<Props> = ({
   buttonHeight = IconButtonSize.HEIGHT,
   svgWidth = SvgSize.WIDTH,
   svgHeight = SvgSize.HEIGHT,
+  disabled = false,
   onClick,
   children,
   type = 'button'
@@ -33,6 +35,7 @@ export const IconButton: FC<Props> = ({
     svgWidth={svgWidth}
     svgHeight={svgHeight}
     onClick={onClick}
+    disabled={disabled}
   >
     {children}
   </StyledIconButton>
@@ -60,5 +63,10 @@ const StyledIconButton = styled.button<{
 
   &:hover {
     background-color: ${tokens.global.White['5'].value};
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: ${tokens.global.Black['3'].value};
   }
 `
