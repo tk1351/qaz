@@ -6,3 +6,10 @@ export type MovieCardType = {
   year: string
   imageURL: string
 }
+
+export type ProfileCardType = {
+  id: number
+  name: string
+  job: string
+  imageSrc: string
+}
