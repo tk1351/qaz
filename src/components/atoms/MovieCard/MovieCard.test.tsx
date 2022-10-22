@@ -64,8 +64,7 @@ describe('Testing MovieCard Component', () => {
     describe('onClick', () => {
       it('MovieCard コンポーネントをクリックしたときに、1度 handleClick が発動すること', async () => {
         const { mockFunction } = setup()
-        const user = userEvent.setup()
-        await user.click(screen.getByTestId('movie-card'))
+        await userEvent.click(screen.getByTestId('movie-card'))
         expect(mockFunction).toHaveBeenCalledTimes(1)
       })
     })
