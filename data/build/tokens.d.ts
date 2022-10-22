@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 16 Oct 2022 03:03:41 GMT
+ * Generated on Sat, 22 Oct 2022 03:42:23 GMT
  */
 
 export default tokens;
@@ -51,7 +51,8 @@ declare const tokens: {
     "sm": DesignToken,
     "lg": DesignToken,
     "xl": DesignToken,
-    "2xl": DesignToken
+    "2xl": DesignToken,
+    "2sm": DesignToken
   },
   "$themes": {},
   "$metadata": {
