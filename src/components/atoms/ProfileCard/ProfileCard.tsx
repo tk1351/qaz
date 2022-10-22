@@ -105,7 +105,7 @@ const StyledProfileName = styled.span`
 
 const StyledProfileJob = styled.span`
   color: ${tokens.global.White['1'].value};
-  font-size: 12px; // FIXME: tokens データから取得するよう修正
+  font-size: ${tokens.global['2sm'].value}px;
   line-height: 1.2;
 
   ${StyledProfileCardWrapper}:hover & {

@@ -110,7 +110,7 @@ const StyledMovieOriginalTitle = styled.span`
 
 const StyledMovieDirectorWrapper = styled.span`
   color: ${tokens.global.White['1'].value};
-  font-size: 12px;
+  font-size: ${tokens.global['2sm'].value}px;
 `
 
 const StyledMovieDirectorLink = styled.a`
@@ -128,27 +128,27 @@ const StyledMovieDirectorName = styled.span`
 
 const StyledMovieCountry = styled.span`
   color: ${tokens.global.White['1'].value};
-  font-size: 12px;
+  font-size: ${tokens.global['2sm'].value}px;
 `
 
 const StyledMovieYear = styled.span`
   color: ${tokens.global.White['1'].value};
-  font-size: 12px;
+  font-size: ${tokens.global['2sm'].value}px;
 `
 
 const StyledMovieGenres = styled.span`
   color: ${tokens.global.White['5'].value};
-  font-size: 12px;
+  font-size: ${tokens.global['2sm'].value}px;
 `
 
 const StyledMovieRuntime = styled.span`
   color: ${tokens.global.White['5'].value};
-  font-size: 12px;
+  font-size: ${tokens.global['2sm'].value}px;
 `
 
 const StyledMovieLanguage = styled.span`
   color: ${tokens.global.White['5'].value};
-  font-size: 12px;
+  font-size: ${tokens.global['2sm'].value}px;
 `
 
 const StyledMovieActionsWrapper = styled.div`

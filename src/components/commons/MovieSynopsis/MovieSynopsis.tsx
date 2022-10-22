@@ -28,7 +28,7 @@ const StyledMovieSynopsisLabel = styled.span`
 
 const StyledMovieSynopsisDescription = styled.span`
   color: ${tokens.global.White['1'].value};
-  font-size: 12px;
+  font-size: ${tokens.global['2sm'].value}px;
   line-height: 1.8;
   display: -webkit-box;
   -webkit-box-orient: vertical;
