@@ -49,8 +49,7 @@ describe('Testing ProfileCard Component', () => {
     describe('onClick', () => {
       it('ProfileCard コンポーネントをクリックしたときに、1度 handleClick が発動すること', async () => {
         const { mockFunction } = setup()
-        const user = userEvent.setup()
-        await user.click(screen.getByTestId('profile-card'))
+        await userEvent.click(screen.getByTestId('profile-card'))
         expect(mockFunction).toHaveBeenCalledTimes(1)
       })
     })
