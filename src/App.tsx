@@ -1,9 +1,11 @@
 import { FC } from 'react'
 import styled from 'styled-components'
+import { Router, Outlet, Link } from '@tanstack/react-location'
 import tokens from '../data/build/tokens'
 import { ReactComponent as Search } from './assets/icons/search_FILL0_wght400_GRAD0_opsz48.svg'
 import { convertToUpperCase } from './features/convertToUpperCase'
 import { mappedNavigation } from './constants/navigation'
+import { routes, location } from './routes'
 
 type NavigationListItem = ReadonlyArray<{ name: string; href: string }>
 
@@ -24,27 +26,35 @@ export const App: FC = () => {
       name: convertToUpperCase(name),
       href
     }))
+
   return (
-    <StyledWrapper>
-      <StyledHeader>
-        <StyledLink href="#">QAZ</StyledLink>
-        <StyledForm>
-          <StyledInputWrapper>
-            <StyledInput type="text" placeholder="Search" />
-            <StyledSvg viewBox="-25 -25 100 100" />
-          </StyledInputWrapper>
-        </StyledForm>
-        <StyledNav>
-          <StyledList>
-            {mappedNavigationListItem(navigationListItem).map((item) => (
-              <li key={item.name}>
-                <StyledNavLink href={item.href}>{item.name}</StyledNavLink>
-              </li>
-            ))}
-          </StyledList>
-        </StyledNav>
-      </StyledHeader>
-    </StyledWrapper>
+    <Router routes={routes} location={location}>
+      <StyledWrapper>
+        <StyledHeader>
+          <StyledLink>
+            <Link to="/">QAZ</Link>
+          </StyledLink>
+          <StyledForm>
+            <StyledInputWrapper>
+              <StyledInput type="text" placeholder="Search" />
+              <StyledSvg viewBox="-25 -25 100 100" />
+            </StyledInputWrapper>
+          </StyledForm>
+          <StyledNav>
+            <StyledList>
+              {mappedNavigationListItem(navigationListItem).map((item) => (
+                <li key={item.name}>
+                  <StyledNavLink>
+                    <Link to={item.href}>{item.name}</Link>
+                  </StyledNavLink>
+                </li>
+              ))}
+            </StyledList>
+          </StyledNav>
+        </StyledHeader>
+        <Outlet />
+      </StyledWrapper>
+    </Router>
   )
 }
 
@@ -64,7 +74,7 @@ const StyledHeader = styled.header`
   padding: 0 160px;
 `
 
-const StyledLink = styled.a`
+const StyledLink = styled.div`
   font-size: ${tokens.global.xl.value}px;
   margin-right: 40px;
 `
@@ -106,7 +116,7 @@ const StyledList = styled.ul`
   gap: 20px;
 `
 
-const StyledNavLink = styled.a`
+const StyledNavLink = styled.div`
   &:hover {
     color: ${tokens.global.White['5'].value};
   }

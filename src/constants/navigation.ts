@@ -1,10 +1,10 @@
 export const mappedNavigation = {
   nowShowing: {
     name: 'now showing',
-    href: '#'
+    href: 'now-showing'
   },
   watchList: {
     name: 'watch list',
-    href: '#'
+    href: 'watch-list'
   }
 } as const
