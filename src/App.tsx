@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import styled from 'styled-components'
 import { Router, Outlet, Link } from '@tanstack/react-location'
 import tokens from '../data/build/tokens'
@@ -6,10 +6,19 @@ import { ReactComponent as Search } from './assets/icons/search_FILL0_wght400_GR
 import { convertToUpperCase } from './features/convertToUpperCase'
 import { mappedNavigation } from './constants/navigation'
 import { routes, location } from './routes'
+import { axiosBase } from './api'
 
 type NavigationListItem = ReadonlyArray<{ name: string; href: string }>
 
 export const App: FC = () => {
+  useEffect(() => {
+    ;(async () => {
+      axiosBase
+        .get(`/550?api_key=${import.meta.env.VITE_API_KEY}`)
+        .then((response) => console.log(response.data))
+    })()
+  }, [])
+
   const navigationListItem: NavigationListItem = [
     {
       name: mappedNavigation.nowShowing.name,
