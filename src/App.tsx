@@ -6,8 +6,12 @@ import { ReactComponent as Search } from './assets/icons/search_FILL0_wght400_GR
 import { convertToUpperCase } from './features/convertToUpperCase'
 import { mappedNavigation } from './constants/navigation'
 import { routes, location } from './routes'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 type NavigationListItem = ReadonlyArray<{ name: string; href: string }>
+
+const queryClient = new QueryClient()
 
 export const App: FC = () => {
   const navigationListItem: NavigationListItem = [
@@ -28,33 +32,36 @@ export const App: FC = () => {
     }))
 
   return (
-    <Router routes={routes} location={location}>
-      <StyledWrapper>
-        <StyledHeader>
-          <StyledLink>
-            <Link to="/">QAZ</Link>
-          </StyledLink>
-          <StyledForm>
-            <StyledInputWrapper>
-              <StyledInput type="text" placeholder="Search" />
-              <StyledSvg viewBox="-25 -25 100 100" />
-            </StyledInputWrapper>
-          </StyledForm>
-          <StyledNav>
-            <StyledList>
-              {mappedNavigationListItem(navigationListItem).map((item) => (
-                <li key={item.name}>
-                  <StyledNavLink>
-                    <Link to={item.href}>{item.name}</Link>
-                  </StyledNavLink>
-                </li>
-              ))}
-            </StyledList>
-          </StyledNav>
-        </StyledHeader>
-        <Outlet />
-      </StyledWrapper>
-    </Router>
+    <QueryClientProvider client={queryClient}>
+      <Router routes={routes} location={location}>
+        <StyledWrapper>
+          <StyledHeader>
+            <StyledLink>
+              <Link to="/">QAZ</Link>
+            </StyledLink>
+            <StyledForm>
+              <StyledInputWrapper>
+                <StyledInput type="text" placeholder="Search" />
+                <StyledSvg viewBox="-25 -25 100 100" />
+              </StyledInputWrapper>
+            </StyledForm>
+            <StyledNav>
+              <StyledList>
+                {mappedNavigationListItem(navigationListItem).map((item) => (
+                  <li key={item.name}>
+                    <StyledNavLink>
+                      <Link to={item.href}>{item.name}</Link>
+                    </StyledNavLink>
+                  </li>
+                ))}
+              </StyledList>
+            </StyledNav>
+          </StyledHeader>
+          <Outlet />
+        </StyledWrapper>
+      </Router>
+      <ReactQueryDevtools initialIsOpen />
+    </QueryClientProvider>
   )
 }
 
