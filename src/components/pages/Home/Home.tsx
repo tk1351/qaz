@@ -117,7 +117,7 @@ export const Home: FC = () => {
           <MovieList
             rowGap="10px"
             columnGap="10px"
-            minLength="300px"
+            minLength="320px"
             movies={movies}
           />
         </StyledNowPlayingListWrapper>
