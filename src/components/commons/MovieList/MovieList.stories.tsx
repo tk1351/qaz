@@ -1,6 +1,5 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 import { MovieList } from './MovieList'
 import { MovieCardType } from '../../../shared/types'
 
@@ -33,6 +32,5 @@ Default.args = {
   minLength: '370px',
   movies: Array.from({ length: 10 }, (_: undefined, index: number) =>
     createDummyMovie({ index })
-  ),
-  onClick: action('click')
+  )
 }

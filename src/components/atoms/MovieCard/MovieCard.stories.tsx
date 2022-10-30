@@ -21,8 +21,7 @@ Default.args = {
   title: 'Movie Title',
   directorName: 'Director Name',
   country: 'Country',
-  year: '2022',
-  onClick: () => console.log('test')
+  year: '2022'
 }
 
 export const BigContents = Template.bind({})
@@ -34,8 +33,7 @@ BigContents.args = {
   title: 'Instructions For A Light And Sound Machine',
   directorName: 'Dirk Schaefer, Matthias Muller, Peter Tscherkassky',
   country: 'West Germany',
-  year: '2022',
-  onClick: () => console.log('test')
+  year: '2022'
 }
 
 export const SmallCard = Template.bind({})
@@ -47,6 +45,5 @@ SmallCard.args = {
   title: 'Instructions For A Light And Sound Machine',
   directorName: 'Dirk Schaefer, Matthias Muller, Peter Tscherkassky',
   country: 'West Germany',
-  year: '2022',
-  onClick: () => console.log('test')
+  year: '2022'
 }

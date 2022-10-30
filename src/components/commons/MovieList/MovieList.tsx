@@ -9,15 +9,13 @@ type Props = {
   columnGap: string
   minLength: string
   movies: ReadonlyArray<MovieCardType>
-  onClick: () => void
 }
 
 export const MovieList: FC<Props> = ({
   rowGap,
   columnGap,
   minLength,
-  movies,
-  onClick
+  movies
 }) => (
   <StyledMovieList>
     <Grid rowGap={rowGap} columnGap={columnGap} minLength={minLength}>
@@ -27,11 +25,11 @@ export const MovieList: FC<Props> = ({
             imageURL={imageURL}
             height={200}
             width={370}
+            id={id}
             title={title}
             directorName={directorName}
             country={country}
             year={year}
-            onClick={onClick}
           />
         </StyledMovieListItem>
       ))}
