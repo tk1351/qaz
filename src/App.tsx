@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, Suspense } from 'react'
 import styled from 'styled-components'
 import { Router, Outlet } from '@tanstack/react-location'
 import tokens from '../data/build/tokens'
@@ -7,14 +7,22 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Header } from './components/atoms/Header/Header'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true
+    }
+  }
+})
 
 export const App: FC = () => (
   <QueryClientProvider client={queryClient}>
     <Router routes={routes} location={location}>
       <StyledWrapper>
         <Header />
-        <Outlet />
+        <Suspense fallback={'...isLoading'}>
+          <Outlet />
+        </Suspense>
       </StyledWrapper>
     </Router>
     <ReactQueryDevtools initialIsOpen />

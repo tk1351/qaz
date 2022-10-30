@@ -11,26 +11,26 @@ type Props = {
   imageURL: string
   height: number
   width: number
+  id: number
   title: string
   directorName: string
   country: string
   year: string
-  onClick: () => void
 }
 
 export const MovieCard: FC<Props> = ({
   imageURL,
   height = MovieCardSize.HEIGHT,
   width = MovieCardSize.WIDTH,
+  id,
   title,
   directorName,
   country,
-  year,
-  onClick
+  year
 }) => {
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
-    onClick()
+    console.log('id', id)
   }
 
   return (
