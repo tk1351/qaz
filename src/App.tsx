@@ -6,6 +6,7 @@ import { routes, location } from './routes'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Header } from './components/atoms/Header/Header'
+import { Loading } from './components/atoms/Loading/Loading'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,7 +21,7 @@ export const App: FC = () => (
     <Router routes={routes} location={location}>
       <StyledWrapper>
         <Header />
-        <Suspense fallback={'...isLoading'}>
+        <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>
       </StyledWrapper>
