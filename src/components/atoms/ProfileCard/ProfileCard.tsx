@@ -1,4 +1,5 @@
 import { FC, MouseEvent } from 'react'
+import { useNavigate } from '@tanstack/react-location'
 import styled from 'styled-components'
 import tokens from '../../../../data/build/tokens'
 
@@ -27,9 +28,10 @@ export const ProfileCard: FC<Props> = ({
   name,
   job
 }) => {
+  const navigate = useNavigate()
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
-    console.log(id)
+    navigate({ to: `/profile/${id}` })
   }
 
   return (
@@ -79,6 +81,7 @@ const StyledProfileImage = styled.img<{ imageHeight: number }>`
   width: 100%;
   height: 100%;
   filter: grayscale(100%);
+  object-fit: cover;
 `
 
 const StyledProfileDescriptionWrapper = styled.div<{ imageHeight: number }>`
