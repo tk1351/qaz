@@ -12,24 +12,24 @@ type Props = {
   width: number
   height: number
   imageHeight: number
+  id: number
   imageSrc: string
   name: string
   job: string
-  onClick: () => void
 }
 
 export const ProfileCard: FC<Props> = ({
   width = ProfileCardSize.WIDTH,
   height = ProfileCardSize.HEIGHT,
   imageHeight = ProfileCardSize.IMAGE_HEIGHT,
+  id,
   imageSrc,
   name,
-  job,
-  onClick
+  job
 }) => {
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
-    onClick()
+    console.log(id)
   }
 
   return (

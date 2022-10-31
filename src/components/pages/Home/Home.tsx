@@ -11,8 +11,9 @@ import {
   useNowPlaying
 } from '../../../features/api/movie'
 import { MovieList } from '../../commons/MovieList/MovieList'
-import { MovieCardType } from '../../../shared/types'
+import { mappedJob, MovieCardType } from '../../../shared/types'
 import { Movie, MovieCredits } from '../../../../api/types/movies'
+import { imageUrl } from '../../../features/imageUrl'
 
 export const Home: FC = () => {
   const getRandomArbitrary = (min: number, max: number) => {
@@ -22,8 +23,6 @@ export const Home: FC = () => {
   }
 
   const index = getRandomArbitrary(0, 19)
-  const imageUrl = (path: string | null) =>
-    `https://image.tmdb.org/t/p/original${path}`
 
   const { data: nowPlayingData } = useNowPlaying()
 
@@ -57,7 +56,9 @@ export const Home: FC = () => {
     const heroDirectorName = findMovieById(
       id,
       nowPlayingDetailsAndCredits
-    )?.movieCredits?.crew?.find((person) => person.job === 'Director')?.name
+    )?.movieCredits?.crew?.find(
+      (person) => person.job === mappedJob.director
+    )?.name
 
     const heroCountry = findMovieById(id, nowPlayingDetailsAndCredits)
       ?.movieDetails?.production_countries[0]?.name

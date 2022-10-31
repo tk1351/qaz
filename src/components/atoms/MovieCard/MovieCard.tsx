@@ -1,5 +1,6 @@
 import { FC, MouseEvent } from 'react'
 import styled from 'styled-components'
+import { useNavigate } from '@tanstack/react-location'
 import tokens from '../../../../data/build/tokens'
 
 const MovieCardSize = {
@@ -28,9 +29,10 @@ export const MovieCard: FC<Props> = ({
   country,
   year
 }) => {
+  const navigate = useNavigate()
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
-    console.log('id', id)
+    navigate({ to: `/movie/${id}` })
   }
 
   return (

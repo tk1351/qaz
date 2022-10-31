@@ -89,7 +89,9 @@ export const MovieDescription: FC<Props> = ({
   )
 }
 
-const StyledMovieDescription = styled.div``
+const StyledMovieDescription = styled.div`
+  width: 400px;
+`
 
 const StyledMovieDescriptionWrapper = styled.div`
   border-bottom: 1px solid ${tokens.global.White['1'].value};
@@ -98,13 +100,13 @@ const StyledMovieDescriptionWrapper = styled.div`
 const StyledMovieTitle = styled.h2`
   margin: 0;
   color: ${tokens.global.White['1'].value};
-  font-size: ${tokens.global.xl.value};
+  font-size: ${tokens.global.xl.value}px;
   font-weight: bold;
 `
 
 const StyledMovieOriginalTitle = styled.span`
   color: ${tokens.global.White['1'].value};
-  font-size: ${tokens.global.sm.value};
+  font-size: ${tokens.global.sm.value}px;
   font-weight: bold;
 `
 

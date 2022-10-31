@@ -8,8 +8,16 @@ export type MovieCardType = {
 }
 
 export type ProfileCardType = {
+  index: number
   id: number
   name: string
   job: string
   imageSrc: string
 }
+
+export const mappedJob = {
+  director: 'Director',
+  writer: 'Writer',
+  photographer: 'Director of Photography',
+  producer: 'Producer'
+} as const
