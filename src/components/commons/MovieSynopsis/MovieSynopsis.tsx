@@ -18,7 +18,9 @@ export const MovieSynopsis: FC<Props> = ({ description }) => (
   </StyledMovieSynopsis>
 )
 
-const StyledMovieSynopsis = styled.div``
+const StyledMovieSynopsis = styled.div`
+  width: 300px;
+`
 
 const StyledMovieSynopsisLabel = styled.span`
   color: ${tokens.global.White['1'].value};

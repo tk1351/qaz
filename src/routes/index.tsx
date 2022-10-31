@@ -5,5 +5,13 @@ import { MovieDetail } from '../components/pages/MovieDetail/MovieDetail'
 export const location = new ReactLocation()
 export const routes: Route[] = [
   { path: '/', element: <Home /> },
-  { path: '/movie/:id', element: <MovieDetail /> }
+  {
+    path: 'movie',
+    children: [
+      {
+        path: ':id',
+        element: <MovieDetail />
+      }
+    ]
+  }
 ]

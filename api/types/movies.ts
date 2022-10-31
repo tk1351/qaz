@@ -21,7 +21,7 @@ export type Movie = {
     origin_country: string
   }[]
   production_countries: { iso_3166_1: string; name: string }[]
-  release_data: string
+  release_date: string
   revenue: number
   runtime: number | null
   spoken_languages: { iso_639_1: string; name: string }[]

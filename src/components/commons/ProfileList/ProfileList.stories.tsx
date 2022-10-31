@@ -3,6 +3,7 @@ import { ProfileList } from './ProfileList'
 import { ProfileCardType } from '../../../shared/types'
 
 const createDummyProfile = ({ index }: { index: number }): ProfileCardType => ({
+  index,
   id: index,
   name: `Profile Name ${index}`,
   job: `Director, Editor, Producer`,
@@ -27,6 +28,5 @@ Default.args = {
   minLength: '180px',
   profiles: Array.from({ length: 10 }, (_: undefined, index: number) =>
     createDummyProfile({ index })
-  ),
-  onClick: () => console.log('test')
+  )
 }

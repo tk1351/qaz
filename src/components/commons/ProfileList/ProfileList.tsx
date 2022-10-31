@@ -9,15 +9,13 @@ type Props = {
   columnGap: string
   minLength: string
   profiles: ReadonlyArray<ProfileCardType>
-  onClick: () => void
 }
 
 export const ProfileList: FC<Props> = ({
   rowGap,
   columnGap,
   minLength,
-  profiles,
-  onClick
+  profiles
 }) => (
   <StyledProfileList>
     <Grid rowGap={rowGap} columnGap={columnGap} minLength={minLength}>
@@ -27,10 +25,10 @@ export const ProfileList: FC<Props> = ({
             width={180}
             height={313}
             imageHeight={214}
+            id={id}
             imageSrc={imageSrc}
             name={name}
             job={job}
-            onClick={onClick}
           />
         </li>
       ))}
